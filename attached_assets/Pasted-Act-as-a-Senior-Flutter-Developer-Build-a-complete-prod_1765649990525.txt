@@ -1,0 +1,50 @@
+Act as a Senior Flutter Developer. Build a complete, production-ready Security & Privacy App named "SpyGuard: Anti-Hacking & Spyware Detector".
+
+The app must be a hybrid system (Working 100% Offline + Fetching Updates Online).
+
+### 1. APP CORE LOGIC (The Brain)
+The app detects "Spyware," "Loan Apps," and "Hidden Trackers" using these strict methods:
+
+   A. **Permission Heuristics (Logic-Based):**
+      - Scan all installed user apps.
+      - IF an app is NOT a System App AND NOT in the 'Safe Whitelist' AND requests dangerous permissions (READ_CONTACTS, READ_SMS, CAMERA, RECORD_AUDIO), flag it as **HIGH RISK**.
+      - **Critical Rule:** specifically target "Loan Apps". If any finance/loan app asks for Contacts + Gallery access, mark it RED immediately.
+
+   B. **Data Usage Monitoring (The Watchdog):**
+      - Detect "Good apps gone bad".
+      - Logic: Check data usage of installed apps. If a simple offline tool (like Flashlight, Calculator, or Offline Game) has consumed significant data (e.g., >10MB) in the background, flag it as "Suspicious Data Leak".
+
+   C. **Hybrid Database (Online + Offline):**
+      - **Offline:** Include a hardcoded local JSON list of known bad apps (Blacklist) and known safe apps (Whitelist like WhatsApp, Banking Apps).
+      - **Online (Dynamic):** On app launch, try to fetch the latest JSON list from a remote URL (Use a placeholder URL for now like 'https://pastebin.com/raw/example').
+      - **Flow:** If internet is available, update the list. If not, use the offline list silently.
+
+   D. **Hidden App Detector:**
+      - Identify apps that do not have a launchable icon but are installed on the phone.
+
+### 2. MONETIZATION STRATEGY (Freemium Model)
+   - **Free User:** Can Scan the phone. The results will show "3 Threats Found," but the specific names of the risky apps must be **BLURRED** or Hidden with "?????".
+   - **Premium User:** Can see the app names, uninstall them, and enable "Real-Time Shield."
+   - **Pricing UI (Psychological Trick):**
+      - Show the price as **$1.49 (Lifetime Access)**.
+      - Next to it, show ~~$9.99~~ crossed out (strikethrough) to indicate a "Launch Offer".
+   - **Tech:** Integrate `in_app_purchase` logic (Mock this for testing so I can click 'Buy' and see the Premium features unlock).
+
+### 3. USER INTERFACE (UI/UX)
+   - **Theme:** Dark Mode (Hacker/Security Style). Colors: Black background, Neon Green for Safe, Bright Red for Danger.
+   - **No Login Required:** The app must open directly to the Dashboard. No Sign-up/Email screens.
+   - **Scan Button:** A large, animated radar-style button in the center.
+
+### 4. LOCALIZATION (5 Languages)
+   - The app must support Multi-Language using `easy_localization` or similar.
+   - **Supported Languages:** English, Urdu, Hindi, Pashto, Sindhi.
+   - **Language Selection:** On the very first launch, ask the user to select their language.
+   - **RTL Support:** Ensure the UI automatically adjusts for Right-to-Left (Urdu, Pashto, Sindhi).
+
+### 5. TECHNICAL REQUIREMENTS
+   - Use `permission_handler` to request permissions.
+   - Use `device_apps` or `android_intent` to fetch installed apps.
+   - Use `http` for fetching the online blacklist.
+   - Ensure the code is error-free, handles exceptions (like no internet), and is ready to build via `flutter build apk`.
+
+**Goal:** Create a high-trust, professional security tool that scares the user about privacy risks and converts them to Premium for protection. Start coding.
