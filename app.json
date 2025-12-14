@@ -33,11 +33,6 @@
           "backgroundColor": "#0A0A0A"
         }
       ]
-    ],
-    "extra": {
-      "eas": {
-        "projectId": "spyguard"
-      }
-    }
+    ]
   }
 }
