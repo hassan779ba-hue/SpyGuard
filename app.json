@@ -7,7 +7,7 @@
     "icon": "./assets/images/icon.png",
     "scheme": "spyguard",
     "userInterfaceStyle": "dark",
-    "newArchEnabled": true,
+    "newArchEnabled": false,
     "ios": {
       "supportsTablet": true,
       "bundleIdentifier": "com.spyguard.app"
@@ -17,8 +17,6 @@
         "backgroundColor": "#0A0A0A",
         "foregroundImage": "./assets/images/android-icon-foreground.png"
       },
-      "edgeToEdgeEnabled": true,
-      "predictiveBackGestureEnabled": false,
       "package": "com.spyguard.app"
     },
     "web": {
@@ -32,17 +30,9 @@
           "image": "./assets/images/splash-icon.png",
           "imageWidth": 200,
           "resizeMode": "contain",
-          "backgroundColor": "#0A0A0A",
-          "dark": {
-            "backgroundColor": "#0A0A0A"
-          }
+          "backgroundColor": "#0A0A0A"
         }
-      ],
-      "expo-web-browser",
-      "expo-audio"
-    ],
-    "experiments": {
-      "reactCompiler": true
-    }
+      ]
+    ]
   }
 }

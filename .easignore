@@ -1,0 +1,34 @@
+# Server files - not needed for mobile build
+server/
+server_dist/
+
+# Database config
+drizzle.config.ts
+
+# Build scripts
+scripts/build.js
+scripts/push-to-github.ts
+
+# Development files
+.local/
+.cache/
+.config/
+.upm/
+
+# Replit specific
+.replit
+replit.nix
+.breakpoints
+
+# Attached assets not needed in build
+attached_assets/
+
+# Logs
+*.log
+
+# Generated files
+generated-icon.png
+dist/
+
+# Snippets
+snippets/
